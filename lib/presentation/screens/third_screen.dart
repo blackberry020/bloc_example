@@ -2,17 +2,17 @@ import 'package:bloc_example/logic/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import "package:flutter_bloc/flutter_bloc.dart";
 
-class SecondScreen extends StatefulWidget {
-  const SecondScreen({super.key, required this.title, required this.color});
+class ThirdScreen extends StatefulWidget {
+  const ThirdScreen({super.key, required this.title, required this.color});
 
   final String title;
   final Color color;
 
   @override
-  State<SecondScreen> createState() => _SecondScreenState();
+  State<ThirdScreen> createState() => _ThirdScreenState();
 }
 
-class _SecondScreenState extends State<SecondScreen> {
+class _ThirdScreenState extends State<ThirdScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,12 +53,10 @@ class _SecondScreenState extends State<SecondScreen> {
             const SizedBox(
               height: 15,
             ),
-            // meow
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FloatingActionButton(
-                  heroTag: "scr2",
                   onPressed: () {
                     BlocProvider.of<CounterCubit>(context).decrement();
                   },
@@ -68,6 +66,7 @@ class _SecondScreenState extends State<SecondScreen> {
                   width: 15,
                 ),
                 FloatingActionButton(
+                  heroTag: "scrThird",
                   onPressed: () {
                     BlocProvider.of<CounterCubit>(context).increment();
                   },
@@ -75,6 +74,7 @@ class _SecondScreenState extends State<SecondScreen> {
                 ),
               ],
             ),
+            const SizedBox(height: 24),
           ],
         ),
       ),
